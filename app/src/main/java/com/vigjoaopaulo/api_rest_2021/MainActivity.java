@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.vigjoaopaulo.api_rest_2021.adapters.PersonaAdapter;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.PersonaApi;
 import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
 import com.vigjoaopaulo.api_rest_2021.model.Persona;
@@ -22,7 +22,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private static Context context;
     private ListView listView;
-    private List<Persona> pessoas;
+    private List<Persona> listPessoas;
 
     ConnectionAPI connectionAPI =  new ConnectionAPI();
     PersonaApi personaApi = connectionAPI.CreateRetrofit();
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.listView);
-        pessoas = new ArrayList<>();
+        listPessoas = new ArrayList<>();
         retornaLista();
     }
 
@@ -41,14 +41,16 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Persona>>() {
             @Override
             public void onResponse(Call<List<Persona>> call, Response<List<Persona>> response) {
-                List<Persona> p = response.body();
-                for(Persona pessoa: p){
-                    pessoas.add(pessoa);
-                }
+//                List<Persona> p = response.body();
+//                for(Persona pessoa: p){
+//                    pessoas.add(pessoa);
+//                }
 
 
-                ArrayAdapter<Persona> adapter = new ArrayAdapter<Persona>(MainActivity.this,android.R.layout.simple_list_item_1, p);
-                listView.setAdapter(adapter);
+//                ArrayAdapter<Persona> adapter = new ArrayAdapter<Persona>(MainActivity.this,R.layout.activity_main, p);
+//                listView.setAdapter(adapter);
+                listPessoas =  response.body();
+                listView.setAdapter(new PersonaAdapter(MainActivity.this, R.layout.activity_main, listPessoas));
 
 
                 }

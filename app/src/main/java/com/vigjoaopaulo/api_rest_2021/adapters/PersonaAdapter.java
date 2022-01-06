@@ -23,7 +23,7 @@ public class PersonaAdapter  extends ArrayAdapter<Persona> {
 
 
 
-    public PersonaAdapter(Context context, ArrayList<Persona> objects) {
+    public PersonaAdapter(Context context, int resource, List<Persona> objects) {
         super(context, R.layout.persona_model, objects);
         this.context = context;
         this.personas = objects;
