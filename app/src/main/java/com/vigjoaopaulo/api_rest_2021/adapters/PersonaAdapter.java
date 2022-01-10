@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import com.vigjoaopaulo.api_rest_2021.R;
 import com.vigjoaopaulo.api_rest_2021.model.Persona;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PersonaAdapter  extends ArrayAdapter<Persona> {

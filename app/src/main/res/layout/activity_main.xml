@@ -6,9 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <ListView
-       android:id="@+id/listView"
-       android:layout_width="match_parent"
+
+   <Button
+       android:id="@+id/btnListarPersona"
+       android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       tools:ignore="MissingConstraints" />
+       android:layout_marginStart="76dp"
+       android:layout_marginTop="128dp"
+       android:layout_marginEnd="9dp"
+       android:onClick="listPersona"
+       android:text="Lista Persona"
+       app:layout_constraintEnd_toStartOf="@+id/btnProd"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/btnProd"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="33dp"
+       android:layout_marginTop="128dp"
+       android:layout_marginEnd="76dp"
+       android:onClick="produto"
+       android:text="Lista Prod"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toEndOf="@+id/btnListarPersona"
+       app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
