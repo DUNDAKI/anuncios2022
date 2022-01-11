@@ -11,7 +11,7 @@ public class Anuncios {
     private String cidade;
     private String estado;
 
-    public Anuncios(int id, String nomeEmpresa, String nomeProduto, Double preco, String endereco, String numero, String cidade, String estado) {
+    public Anuncios() {
         this.id = id;
         this.nomeEmpresa = nomeEmpresa;
         this.nomeProduto = nomeProduto;

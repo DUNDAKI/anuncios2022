@@ -37,10 +37,13 @@ public class PersonaAdapter  extends ArrayAdapter<Persona> {
 
         TextView id = (TextView) rowView.findViewById(R.id.ID);
         TextView nombre = (TextView) rowView.findViewById(R.id.txtNombre);
+        TextView nombre2 = (TextView) rowView.findViewById(R.id.txtNombre2);
         TextView apellidos = (TextView) rowView.findViewById(R.id.txtApellido);
 
         id.setText(String.format("ID:%s ", personas.get(position).getId()));
         nombre.setText(String.format("Nombre:%s ", personas.get(position).getNombres()));
+        nombre2.setText(String.format("Nombre:%s ", personas.get(position).getNombres()));
+        apellidos.setText(String.format("Apellido:%s ", personas.get(position).getApellidos()));
         apellidos.setText(String.format("Apellido:%s ", personas.get(position).getApellidos()));
 
 

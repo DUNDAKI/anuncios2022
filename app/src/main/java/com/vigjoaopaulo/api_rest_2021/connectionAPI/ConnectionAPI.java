@@ -1,6 +1,7 @@
 package com.vigjoaopaulo.api_rest_2021.connectionAPI;
 
 import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioAPI;
+import com.vigjoaopaulo.api_rest_2021.clientAPI.BusinessApi;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.PersonaApi;
 
 import retrofit2.Retrofit;
@@ -31,6 +32,18 @@ public class ConnectionAPI {
 
         AnuncioAPI personaApi = retrofit.create(AnuncioAPI.class);
         return personaApi;
+
+    }
+
+    public BusinessApi CreateBusinessRetrofit(){
+        Retrofit retrofit = new Retrofit
+                .Builder()
+                .baseUrl(API_ANUNCIO)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        BusinessApi businessApi = retrofit.create(BusinessApi.class);
+        return  businessApi;
+
 
     }
 

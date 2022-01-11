@@ -44,7 +44,7 @@ public class PaginaUsuario extends AppCompatActivity {
             public void onResponse(Call<List<Anuncios>> call, Response<List<Anuncios>> response) {
 
                 anuncios =  response.body();
-                listView.setAdapter(new AnuncioAdapter(PaginaUsuario.this, R.layout.activity_main, anuncios));
+                listView.setAdapter(new AnuncioAdapter(PaginaUsuario.this, R.layout.pagina_usuario, anuncios));
 
 
             }

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Dashboard");
 
     }
 
@@ -41,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void produto(View view) {
         Intent intent = new Intent(MainActivity.this, PaginaUsuario.class);
+        startActivity(intent);
+    }
+
+    public void business(View view) {
+        Intent intent = new Intent(MainActivity.this, PaginaBusiness.class);
         startActivity(intent);
     }
 }

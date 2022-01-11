@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.API_Rest_2021">
         <activity
+            android:name=".PaginaBusiness"
+            android:exported="false" />
+        <activity
             android:name=".ListaPersona"
             android:exported="false" />
         <activity
