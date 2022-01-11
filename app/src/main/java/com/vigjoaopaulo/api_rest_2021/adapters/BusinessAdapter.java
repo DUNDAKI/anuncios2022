@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,7 +42,7 @@ public class BusinessAdapter extends ArrayAdapter<Anuncios> {
         TextView endereco = (TextView) rowView.findViewById(R.id.txtEndereco);
         TextView numero = (TextView) rowView.findViewById(R.id.txtNumero);
         TextView cidade = (TextView) rowView.findViewById(R.id.txtCidade);
-        TextView sigla = (TextView) rowView.findViewById(R.id.txtSigla);
+        TextView sigla = (TextView) rowView.findViewById(R.id.txtEstado);
 
 
         id.setText( String.format("N° DA POSTAGEM: %s " , anuncios.get(position).getId()));

@@ -6,18 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.vigjoaopaulo.api_rest_2021.adapters.AnuncioAdapter;
-import com.vigjoaopaulo.api_rest_2021.adapters.BusinessAdapter;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioAPI;
-import com.vigjoaopaulo.api_rest_2021.clientAPI.BusinessApi;
 import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,23 +31,44 @@ public class PaginaBusiness extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.model_business);
+        setContentView(R.layout.exemplos_layout);
         setTitle("Dashboard Business");
 
-        TextView id = (TextView) findViewById(R.id.ID);
+        TextView id = (TextView) findViewById(R.id.codID);
+        EditText txtID = (EditText) findViewById(R.id.txtId);
         TextView nomeEmpresa = (TextView) findViewById(R.id.txtNomeEmpresa);
         TextView nomeProduto = (TextView) findViewById(R.id.txtNomeprod);
         TextView preco = (TextView) findViewById(R.id.txtPreco);
         TextView endereco = (TextView) findViewById(R.id.txtEndereco);
         TextView numero = (TextView) findViewById(R.id.txtNumero);
         TextView cidade = (TextView) findViewById(R.id.txtCidade);
-        TextView sigla = (TextView) findViewById(R.id.txtSigla);
+        TextView sigla = (TextView) findViewById(R.id.txtEstado);
 
         Button cadastrar = (Button) findViewById(R.id.btnCadastrar);
         Button editar = (Button) findViewById(R.id.btnEditar);
         Button delete = (Button) findViewById(R.id.btnDelete);
         Button lista = (Button) findViewById(R.id.btnListar);
 
+        //popular a lista
+        Bundle bundle = getIntent().getExtras();
+        String id2 = bundle.getString("id");
+        String nome = bundle.getString("nomeEmpresa");
+        String prod = bundle.getString("nomeProduto");
+        String valor = bundle.getString("preco");
+        String end = bundle.getString("endereco");
+        String num = bundle.getString("numero");
+        String city = bundle.getString("cidade");
+        String estado = bundle.getString("estado");
+
+
+        txtID.setText(id2);
+        nomeEmpresa.setText(nome);
+        nomeProduto.setText(prod);
+        preco.setText(valor);
+        endereco.setText(end);
+        numero.setText(num);
+        cidade.setText(city);
+        sigla.setText(estado);
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
