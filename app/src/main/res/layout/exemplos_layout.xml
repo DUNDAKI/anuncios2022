@@ -9,34 +9,33 @@
 
 
     <TextView
-        android:id="@+id/codID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:hint="identificaçao"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/txtId"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="31dp"
+        android:gravity="center"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:hint="identificaçao"
-        app:layout_constraintStart_toEndOf="@+id/codID"
+        android:background="#000"
+        android:enabled="false"
+        android:layout_margin="5dp"
+
+        android:text="1000000000"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtNomeEmpresa"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:hint="nome da empresa"
+        android:layout_marginEnd="10dp"
+        android:hint="nome"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codID" />
+        app:layout_constraintTop_toBottomOf="@+id/txtId" />
 
     <EditText
         android:id="@+id/txtNomeprod"
@@ -65,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:hint="endereço"
+        android:hint="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNomeprod" />
 
@@ -75,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:hint="numero"
+        android:hint="n"
         app:layout_constraintStart_toEndOf="@+id/txtEndereco"
         app:layout_constraintTop_toBottomOf="@+id/txtNomeprod" />
 
@@ -85,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:hint="informe a cidade"
+        android:hint="city"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEndereco" />
 
@@ -95,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:hint="informe a cidade"
+        android:hint="est"
         app:layout_constraintStart_toEndOf="@+id/txtCidade"
         app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
 

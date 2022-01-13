@@ -93,8 +93,8 @@ public class Anuncios {
     public String toString() {
         return "Anuncios{" +
                 "id=" + id +
-                ", nomeEmpresa='" + nomeEmpresa + '\'' +
-                ", nomeProduto='" + nomeProduto + '\'' +
+                ", nomeEmpresa='" + nomeEmpresa.toUpperCase() + '\'' +
+                ", nomeProduto='" + nomeProduto.toUpperCase() + '\'' +
                 ", preco=" + preco +
                 ", endereco='" + endereco + '\'' +
                 ", numero='" + numero + '\'' +

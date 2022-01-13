@@ -12,17 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.API_Rest_2021">
         <activity
-            android:name=".PaginaBusiness"
+            android:name=".activitys.TesteActivity"
             android:exported="false" />
         <activity
-            android:name=".ListaPersona"
+            android:name=".ContoleEmpresarial"
             android:exported="false" />
         <activity
-            android:name=".PaginaUsuario"
+            android:name=".activitys.PainelControleActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

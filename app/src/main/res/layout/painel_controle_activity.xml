@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaginaBusiness">
+    tools:context=".activitys.PainelControleActivity">
 
     <ListView
-        android:id="@+id/listViewBusiness"
+        android:id="@+id/listViewAnuncio"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="MissingConstraints" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

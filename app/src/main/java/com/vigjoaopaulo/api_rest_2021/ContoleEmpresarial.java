@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PaginaBusiness extends AppCompatActivity {
+public class ContoleEmpresarial extends AppCompatActivity {
     private ListView listView;
     private List<Anuncios> anuncios;
 
@@ -32,10 +32,10 @@ public class PaginaBusiness extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exemplos_layout);
-        setTitle("Dashboard Business");
+        setTitle("Dashboard Empresarial");
 
-        TextView id = (TextView) findViewById(R.id.codID);
-        EditText txtID = (EditText) findViewById(R.id.txtId);
+
+        TextView txtID = (TextView) findViewById(R.id.txtId);
         TextView nomeEmpresa = (TextView) findViewById(R.id.txtNomeEmpresa);
         TextView nomeProduto = (TextView) findViewById(R.id.txtNomeprod);
         TextView preco = (TextView) findViewById(R.id.txtPreco);
@@ -47,7 +47,6 @@ public class PaginaBusiness extends AppCompatActivity {
         Button cadastrar = (Button) findViewById(R.id.btnCadastrar);
         Button editar = (Button) findViewById(R.id.btnEditar);
         Button delete = (Button) findViewById(R.id.btnDelete);
-        Button lista = (Button) findViewById(R.id.btnListar);
 
         //popular a lista
         Bundle bundle = getIntent().getExtras();
@@ -93,7 +92,7 @@ public class PaginaBusiness extends AppCompatActivity {
             @Override
             public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
                 if(response!= null){
-                    Toast.makeText(PaginaBusiness.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ContoleEmpresarial.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
                 }
             }
 
