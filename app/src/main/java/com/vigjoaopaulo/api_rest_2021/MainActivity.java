@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.vigjoaopaulo.api_rest_2021.activitys.PainelControleActivity;
-import com.vigjoaopaulo.api_rest_2021.activitys.TesteActivity;
+import com.vigjoaopaulo.api_rest_2021.activitys.ListaAnuncioEmpresaActivity;
+import com.vigjoaopaulo.api_rest_2021.rating_bar.Avaliacao;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,19 +22,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//
-//    public void listaProdutos(View view) {
-//        Intent intent = new Intent(MainActivity.this, ListaProdActivity.class);
-//        startActivity(intent);
-//    }
+
+    public void listaProdutos(View view) {
+        Intent intent = new Intent(MainActivity.this, Avaliacao.class);
+        startActivity(intent);
+    }
 
     public void produto(View view) {
-        Intent intent = new Intent(MainActivity.this, PainelControleActivity.class);
+        Intent intent = new Intent(MainActivity.this, ListaAnuncioEmpresaActivity.class);
         startActivity(intent);
     }
 
     public void business(View view) {
-        Intent intent = new Intent(MainActivity.this, TesteActivity.class);
-        startActivity(intent);
+
     }
 }

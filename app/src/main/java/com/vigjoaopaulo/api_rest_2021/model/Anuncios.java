@@ -10,11 +10,14 @@ public class Anuncios {
     private String numero;
     private String cidade;
     private String estado;
+    private Integer nota;
+
 
     public Anuncios(){
 
     }
-    public Anuncios(int id, String nomeEmpresa, String nomeProduto, Double preco, String endereco, String numero, String cidade, String estado) {
+
+    public Anuncios(int id, String nomeEmpresa, String nomeProduto, Double preco, String endereco, String numero, String cidade, String estado, Integer nota) {
         this.id = id;
         this.nomeEmpresa = nomeEmpresa;
         this.nomeProduto = nomeProduto;
@@ -23,6 +26,7 @@ public class Anuncios {
         this.numero = numero;
         this.cidade = cidade;
         this.estado = estado;
+        this.nota = nota;
     }
 
     public int getId() {
@@ -89,17 +93,26 @@ public class Anuncios {
         this.estado = estado;
     }
 
+    public Integer getNota() {
+        return nota;
+    }
+
+    public void setNota(Integer nota) {
+        this.nota = nota;
+    }
+
     @Override
     public String toString() {
         return "Anuncios{" +
                 "id=" + id +
-                ", nomeEmpresa='" + nomeEmpresa.toUpperCase() + '\'' +
-                ", nomeProduto='" + nomeProduto.toUpperCase() + '\'' +
+                ", nomeEmpresa='" + nomeEmpresa + '\'' +
+                ", nomeProduto='" + nomeProduto + '\'' +
                 ", preco=" + preco +
                 ", endereco='" + endereco + '\'' +
                 ", numero='" + numero + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
+                ", nota='" + nota + '\'' +
                 '}';
     }
 }

@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.vigjoaopaulo.api_rest_2021.ContoleEmpresarial;
+import com.vigjoaopaulo.api_rest_2021.model.CadastroAnuncioActivity;
 import com.vigjoaopaulo.api_rest_2021.R;
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
@@ -45,6 +47,14 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         TextView numero = (TextView) rowView.findViewById(R.id.txtNumeroM);
         TextView cidade = (TextView) rowView.findViewById(R.id.txtCidadeM);
         TextView estado = (TextView) rowView.findViewById(R.id.txtEstadoM);
+        TextView nota = (TextView) rowView.findViewById(R.id.txtNota);
+        Button btnAvalia = (Button) rowView.findViewById(R.id.btnSubmit);
+        RatingBar  ratingBar = (RatingBar) rowView.findViewById(R.id.ratingBar);
+
+        btnAvalia.setVisibility(View.INVISIBLE);
+
+
+
 
         id.setText( String.format("N° da publicação: %s " , anuncios.get(position).getId()));
         nomeEmpresa.setText(String.format("Nome da empresa: %s ", anuncios.get(position).getNomeEmpresa()));
@@ -54,6 +64,12 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         numero.setText(String.format("N°: %s ", anuncios.get(position).getNumero()));
         cidade.setText(String.format("Cidade: %s ", anuncios.get(position).getCidade()));
         estado.setText(String.format("Estado: %s ", anuncios.get(position).getEstado()));
+        nota.setText(String.format("nota: %s ", anuncios.get(position).getNota()));
+
+        ratingBar.setRating(Float.parseFloat(anuncios.get(position).getNota().toString()));
+
+
+
 
         if(id==null && id.equals("")){
             id.setVisibility(View.VISIBLE);
@@ -64,7 +80,7 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ContoleEmpresarial.class);
+                Intent intent = new Intent(context, CadastroAnuncioActivity.class);
                 intent.putExtra("id", String.valueOf(anuncios.get(position).getId()));
                 intent.putExtra("nomeEmpresa", String.valueOf(anuncios.get(position).getNomeEmpresa()));
                 intent.putExtra("nomeProduto", String.valueOf(anuncios.get(position).getNomeProduto()));

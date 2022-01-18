@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_avaliacao.xml" value="0.11277173913043478" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_cadastro.xml" value="0.20108695652173914" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_teste.xml" value="0.19010416666666666" />
@@ -14,7 +15,7 @@
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/lista_persona.xml" value="0.19010416666666666" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/lista_prod_activity.xml" value="0.1213768115942029" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/lista_prod_usuario.xml" value="0.1213768115942029" />
-        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/model_anuncio.xml" value="0.33" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/model_anuncio.xml" value="0.25" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/model_business.xml" value="0.33" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/pagina_business.xml" value="0.19791666666666666" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/pagina_usuario.xml" value="0.20416666666666666" />

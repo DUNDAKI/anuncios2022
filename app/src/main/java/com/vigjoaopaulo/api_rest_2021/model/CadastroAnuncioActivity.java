@@ -1,4 +1,4 @@
-package com.vigjoaopaulo.api_rest_2021;
+package com.vigjoaopaulo.api_rest_2021.model;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioAPI;
+import com.vigjoaopaulo.api_rest_2021.R;
+import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
 import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
-import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
 import java.util.List;
 
@@ -21,12 +20,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ContoleEmpresarial extends AppCompatActivity {
+public class CadastroAnuncioActivity extends AppCompatActivity {
     private ListView listView;
     private List<Anuncios> anuncios;
 
     ConnectionAPI connectionAPI =  new ConnectionAPI();
-    AnuncioAPI anuncioAPI = connectionAPI.CreateAnuncioRetrofit();
+    AnuncioService anuncioService = connectionAPI.CreateAnuncioRetrofit();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,7 @@ public class ContoleEmpresarial extends AppCompatActivity {
         TextView sigla = (TextView) findViewById(R.id.txtEstado);
 
         Button cadastrar = (Button) findViewById(R.id.btnCadastrar);
-        Button editar = (Button) findViewById(R.id.btnEditar);
-        Button delete = (Button) findViewById(R.id.btnDelete);
+             Button delete = (Button) findViewById(R.id.btnDelete);
 
         //popular a lista
         Bundle bundle = getIntent().getExtras();
@@ -69,6 +67,8 @@ public class ContoleEmpresarial extends AppCompatActivity {
         cidade.setText(city);
         sigla.setText(estado);
 
+
+
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,12 +87,12 @@ public class ContoleEmpresarial extends AppCompatActivity {
 
     }
     public void addAnuncio(Anuncios anuncios){
-        Call<Anuncios> call = anuncioAPI.addAnuncio(anuncios);
+        Call<Anuncios> call = anuncioService.addAnuncio(anuncios);
         call.enqueue(new Callback<Anuncios>() {
             @Override
             public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
                 if(response!= null){
-                    Toast.makeText(ContoleEmpresarial.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
                 }
             }
 

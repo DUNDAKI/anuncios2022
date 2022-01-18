@@ -1,7 +1,6 @@
 package com.vigjoaopaulo.api_rest_2021.clientAPI;
 
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
-import com.vigjoaopaulo.api_rest_2021.model.Persona;
 
 import java.util.List;
 
@@ -10,7 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-public interface AnuncioAPI {
+public interface AnuncioService {
 
     @GET("listar/")
     Call<List<Anuncios>> getAnuncios();

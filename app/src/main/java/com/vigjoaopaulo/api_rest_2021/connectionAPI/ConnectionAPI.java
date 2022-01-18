@@ -1,24 +1,22 @@
 package com.vigjoaopaulo.api_rest_2021.connectionAPI;
 
-import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioAPI;
+import com.vigjoaopaulo.api_rest_2021.apis.Apis;
+import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnectionAPI {
-    public static final String URL_001 = "http://192.168.1.102:8080/personas/";
-    public static final String API_ANUNCIO = "http://192.168.1.102:8080/anuncio/";
+    Apis api = new Apis();
 
-
-
-    public AnuncioAPI CreateAnuncioRetrofit(){
+    public AnuncioService CreateAnuncioRetrofit(){
         Retrofit retrofit = new Retrofit
                 .Builder()
-                .baseUrl(API_ANUNCIO)
+                .baseUrl(api.getClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        AnuncioAPI personaApi = retrofit.create(AnuncioAPI.class);
+        AnuncioService personaApi = retrofit.create(AnuncioService.class);
         return personaApi;
 
     }
