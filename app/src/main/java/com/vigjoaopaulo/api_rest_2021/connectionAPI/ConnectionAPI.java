@@ -12,7 +12,7 @@ public class ConnectionAPI {
     public AnuncioService CreateAnuncioRetrofit(){
         Retrofit retrofit = new Retrofit
                 .Builder()
-                .baseUrl(api.getClient())
+                .baseUrl(api.getAnuncio())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

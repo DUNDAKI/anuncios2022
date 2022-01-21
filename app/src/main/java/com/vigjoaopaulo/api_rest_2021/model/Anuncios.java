@@ -1,6 +1,8 @@
 package com.vigjoaopaulo.api_rest_2021.model;
 
-public class Anuncios {
+import java.util.Enumeration;
+
+public class Anuncios  {
 
     private int id;
     private String nomeEmpresa;
@@ -115,4 +117,5 @@ public class Anuncios {
                 ", nota='" + nota + '\'' +
                 '}';
     }
+
 }

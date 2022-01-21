@@ -11,7 +11,7 @@
         android:id="@+id/txtIdM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:text="id"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,27 +109,36 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNumeroM" />
 
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:numStars="5"
-        android:rating="1.0"
-        android:stepSize="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstadoM" />
-
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
         android:text="Submit"
-        app:layout_constraintStart_toEndOf="@+id/ratingBar"
+        app:layout_constraintStart_toEndOf="@+id/LratingBara"
         app:layout_constraintTop_toBottomOf="@+id/txtNota" />
 
+    <LinearLayout
+        android:id="@+id/LratingBara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCidadeM">
 
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+
+            android:numStars="5"
+            android:rating="1.0"
+            android:stepSize="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEstadoM" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

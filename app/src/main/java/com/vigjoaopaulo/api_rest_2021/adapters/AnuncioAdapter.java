@@ -50,6 +50,8 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         TextView nota = (TextView) rowView.findViewById(R.id.txtNota);
         Button btnAvalia = (Button) rowView.findViewById(R.id.btnSubmit);
         RatingBar  ratingBar = (RatingBar) rowView.findViewById(R.id.ratingBar);
+        ratingBar.setIsIndicator(true);
+
 
         btnAvalia.setVisibility(View.INVISIBLE);
 

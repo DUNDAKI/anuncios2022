@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.vigjoaopaulo.api_rest_2021.R;
 import com.vigjoaopaulo.api_rest_2021.adapters.AnuncioAdapter;
@@ -13,6 +14,7 @@ import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,6 +37,7 @@ public class ListaAnuncioEmpresaActivity extends AppCompatActivity {
         anuncios = new ArrayList<>();
 
         retornaProduto();
+
     }
 
 
@@ -45,8 +48,20 @@ public class ListaAnuncioEmpresaActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Anuncios>> call, Response<List<Anuncios>> response) {
 
-                anuncios =  response.body();
-                listView.setAdapter(new AnuncioAdapter(ListaAnuncioEmpresaActivity.this, R.layout.painel_controle_activity, anuncios));
+                List<Anuncios> a =  response.body();
+
+                for (Anuncios prod: a) {
+                    anuncios.add(prod);
+                    Log.e("Lista", String.valueOf(prod));
+                }
+
+                if(anuncios.isEmpty()){
+                    Log.e("Erro ", "Nenhum registro encontrado!!!");
+                    Toast.makeText(ListaAnuncioEmpresaActivity.this, "Nenhum registro encontrado!!!", Toast.LENGTH_SHORT).show();
+                }else {
+                    listView.setAdapter(new AnuncioAdapter(ListaAnuncioEmpresaActivity.this, R.layout.painel_controle_activity, anuncios));
+                }
+
             }
 
             @Override
