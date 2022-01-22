@@ -48,6 +48,7 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         TextView cidade = (TextView) rowView.findViewById(R.id.txtCidadeM);
         TextView estado = (TextView) rowView.findViewById(R.id.txtEstadoM);
         TextView nota = (TextView) rowView.findViewById(R.id.txtNota);
+        TextView status = (TextView) rowView.findViewById(R.id.txtStatus);
         Button btnAvalia = (Button) rowView.findViewById(R.id.btnSubmit);
         RatingBar  ratingBar = (RatingBar) rowView.findViewById(R.id.ratingBar);
         ratingBar.setIsIndicator(true);

@@ -31,6 +31,8 @@ public class Anuncios  {
         this.nota = nota;
     }
 
+
+
     public int getId() {
         return id;
     }
