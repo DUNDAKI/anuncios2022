@@ -7,6 +7,7 @@
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_cadastro.xml" value="0.20108695652173914" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_teste.xml" value="0.19010416666666666" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/cadastro_layout.xml" value="0.19947916666666668" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/content_man.xml" value="0.25" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/exemplos_layout.xml" value="0.33" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/lista.xml" value="0.12092391304347826" />
@@ -19,9 +20,10 @@
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/model_business.xml" value="0.33" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/pagina_business.xml" value="0.19791666666666666" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/pagina_usuario.xml" value="0.20416666666666666" />
-        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/painel_controle_activity.xml" value="0.1213768115942029" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/painel_controle_activity.xml" value="0.25" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/painel_controle_activity2.xml" value="0.1213768115942029" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/persona_model.xml" value="0.10597826086956522" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/status.xml" value="0.25" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/teste.xml" value="0.1213768115942029" />
       </map>
     </option>

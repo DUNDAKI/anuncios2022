@@ -98,6 +98,17 @@
         app:layout_constraintStart_toEndOf="@+id/txtCidade"
         app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
 
+
+    <EditText
+        android:id="@+id/txtNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="nota"
+        app:layout_constraintStart_toEndOf="@+id/txtEstado"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
+
     <Button
         android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"

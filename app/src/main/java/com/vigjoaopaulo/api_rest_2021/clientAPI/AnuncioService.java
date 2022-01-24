@@ -14,6 +14,9 @@ public interface AnuncioService {
     @GET("listar/")
     Call<List<Anuncios>> getAnuncios();
 
-    @POST("inserir/")
+    @GET("list-alcool/")
+    Call<List<Anuncios>> getAlcool();
+
+    @POST("add/")
     Call<Anuncios> addAnuncio(@Body Anuncios anuncios);
 }

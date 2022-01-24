@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.vigjoaopaulo.api_rest_2021.activitys.ListaAnuncioEmpresaActivity;
+import com.vigjoaopaulo.api_rest_2021.model.CadastroAnuncioActivity;
 import com.vigjoaopaulo.api_rest_2021.rating_bar.Avaliacao;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,5 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void business(View view) {
 
+    }
+
+    public void cadastrar(View view) {
+        Intent intent = new Intent(MainActivity.this, CadastroAnuncioActivity.class);
+        startActivity(intent);
     }
 }

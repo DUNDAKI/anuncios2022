@@ -2,6 +2,7 @@ package com.vigjoaopaulo.api_rest_2021.model;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,7 +11,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.vigjoaopaulo.api_rest_2021.MainActivity;
 import com.vigjoaopaulo.api_rest_2021.R;
+import com.vigjoaopaulo.api_rest_2021.activitys.ListaAnuncioEmpresaActivity;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
 import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
 
@@ -30,7 +33,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.exemplos_layout);
+        setContentView(R.layout.cadastro_layout);
         setTitle("Dashboard Empresarial");
 
 
@@ -42,30 +45,41 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         TextView numero = (TextView) findViewById(R.id.txtNumero);
         TextView cidade = (TextView) findViewById(R.id.txtCidade);
         TextView sigla = (TextView) findViewById(R.id.txtEstado);
+        TextView nota = (TextView) findViewById(R.id.txtNota);
+
+
+        if(txtID==null && txtID.equals("")){
+            txtID.setVisibility(View.VISIBLE);
+        }
+
 
         Button cadastrar = (Button) findViewById(R.id.btnCadastrar);
-             Button delete = (Button) findViewById(R.id.btnDelete);
+        Button delete = (Button) findViewById(R.id.btnDelete);
 
         //popular a lista
-        Bundle bundle = getIntent().getExtras();
-        String id2 = bundle.getString("id");
-        String nome = bundle.getString("nomeEmpresa");
-        String prod = bundle.getString("nomeProduto");
-        String valor = bundle.getString("preco");
-        String end = bundle.getString("endereco");
-        String num = bundle.getString("numero");
-        String city = bundle.getString("cidade");
-        String estado = bundle.getString("estado");
+//        Bundle bundle = getIntent().getExtras();
+//        String id2 = bundle.getString("id");
+//        String nome = bundle.getString("nomeEmpresa");
+//        String prod = bundle.getString("nomeProduto");
+//        String valor = bundle.getString("preco");
+//        String end = bundle.getString("endereco");
+//        String num = bundle.getString("numero");
+//        String city = bundle.getString("cidade");
+//        String estado = bundle.getString("estado");
+//        String n = bundle.getString("nota");
+//
+//
+//
+//        txtID.setText(id2);
+//        nomeEmpresa.setText(nome);
+//        nomeProduto.setText(prod);
+//        preco.setText(valor);
+//        endereco.setText(end);
+//        numero.setText(num);
+//        cidade.setText(city);
+//        sigla.setText(estado);
+//        nota.setText(n);
 
-
-        txtID.setText(id2);
-        nomeEmpresa.setText(nome);
-        nomeProduto.setText(prod);
-        preco.setText(valor);
-        endereco.setText(end);
-        numero.setText(num);
-        cidade.setText(city);
-        sigla.setText(estado);
 
 
 
@@ -80,13 +94,18 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 anuncios.setNumero(numero.getText().toString());
                 anuncios.setCidade(cidade.getText().toString());
                 anuncios.setEstado(sigla.getText().toString());
+                anuncios.setNota(Integer.valueOf(nota.getText().toString()));
                 addAnuncio(anuncios);
+
+                Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
+                startActivity(intent);
             }
         });
 
 
     }
     public void addAnuncio(Anuncios anuncios){
+
         Call<Anuncios> call = anuncioService.addAnuncio(anuncios);
         call.enqueue(new Callback<Anuncios>() {
             @Override
@@ -102,25 +121,6 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             }
         });
     }
-
-//    public void retornaProduto(){
-//        Call<List<Anuncios>> call =  businessApi.getAnunciosBusiness();
-//        call.enqueue(new Callback<List<Anuncios>>() {
-//            @Override
-//            public void onResponse(Call<List<Anuncios>> call, Response<List<Anuncios>> response) {
-//
-//                anuncios =  response.body();
-//                listView.setAdapter(new BusinessAdapter(PaginaBusiness.this, R.layout.pagina_business, anuncios));
-//
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Anuncios>> call, Throwable t) {
-//                Log.e("Erro", t.getMessage());
-//            }
-//        });
-//    }
 
 
 }

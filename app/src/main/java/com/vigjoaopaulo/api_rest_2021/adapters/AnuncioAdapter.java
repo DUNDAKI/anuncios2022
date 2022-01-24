@@ -3,6 +3,7 @@ package com.vigjoaopaulo.api_rest_2021.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,18 +14,23 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
+import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
 import com.vigjoaopaulo.api_rest_2021.model.CadastroAnuncioActivity;
 import com.vigjoaopaulo.api_rest_2021.R;
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
 
     private Context context;
     private List<Anuncios> anuncios;
-
-
 
     public AnuncioAdapter(Context context, int resource, List<Anuncios> objects) {
         super(context, R.layout.model_anuncio, objects);
@@ -56,9 +62,6 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
 
         btnAvalia.setVisibility(View.INVISIBLE);
 
-
-
-
         id.setText( String.format("N° da publicação: %s " , anuncios.get(position).getId()));
         nomeEmpresa.setText(String.format("Nome da empresa: %s ", anuncios.get(position).getNomeEmpresa()));
         nomeProduto.setText(String.format("Produto: %s ", anuncios.get(position).getNomeProduto()));
@@ -68,10 +71,7 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         cidade.setText(String.format("Cidade: %s ", anuncios.get(position).getCidade()));
         estado.setText(String.format("Estado: %s ", anuncios.get(position).getEstado()));
         nota.setText(String.format("nota: %s ", anuncios.get(position).getNota()));
-
         ratingBar.setRating(Float.parseFloat(anuncios.get(position).getNota().toString()));
-
-
 
 
         if(id==null && id.equals("")){
@@ -99,7 +99,7 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
 
 
         if(position % 2 == 0){
-            rowView.setBackgroundColor(Color.CYAN);
+            rowView.setBackgroundColor(Color.red(android.R.color.holo_purple));
         }else{
             rowView.setBackgroundColor(Color.YELLOW);
         }
