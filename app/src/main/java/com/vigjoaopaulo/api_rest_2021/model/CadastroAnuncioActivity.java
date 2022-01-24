@@ -46,39 +46,32 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         TextView cidade = (TextView) findViewById(R.id.txtCidade);
         TextView sigla = (TextView) findViewById(R.id.txtEstado);
         TextView nota = (TextView) findViewById(R.id.txtNota);
-
-
-        if(txtID==null && txtID.equals("")){
-            txtID.setVisibility(View.VISIBLE);
-        }
-
-
         Button cadastrar = (Button) findViewById(R.id.btnCadastrar);
         Button delete = (Button) findViewById(R.id.btnDelete);
 
         //popular a lista
-//        Bundle bundle = getIntent().getExtras();
-//        String id2 = bundle.getString("id");
-//        String nome = bundle.getString("nomeEmpresa");
-//        String prod = bundle.getString("nomeProduto");
-//        String valor = bundle.getString("preco");
-//        String end = bundle.getString("endereco");
-//        String num = bundle.getString("numero");
-//        String city = bundle.getString("cidade");
-//        String estado = bundle.getString("estado");
-//        String n = bundle.getString("nota");
-//
-//
-//
-//        txtID.setText(id2);
-//        nomeEmpresa.setText(nome);
-//        nomeProduto.setText(prod);
-//        preco.setText(valor);
-//        endereco.setText(end);
-//        numero.setText(num);
-//        cidade.setText(city);
-//        sigla.setText(estado);
-//        nota.setText(n);
+        Bundle bundle = getIntent().getExtras();
+        String id = bundle.getString("id");
+        String nome = bundle.getString("nomeEmpresa");
+        String prod = bundle.getString("nomeProduto");
+        String valor = bundle.getString("preco");
+        String end = bundle.getString("endereco");
+        String num = bundle.getString("numero");
+        String city = bundle.getString("cidade");
+        String estado = bundle.getString("estado");
+        String n = bundle.getString("nota");
+
+
+
+        txtID.setText(id);
+        nomeEmpresa.setText(nome);
+        nomeProduto.setText(prod);
+        preco.setText(valor);
+        endereco.setText(end);
+        numero.setText(num);
+        cidade.setText(city);
+        sigla.setText(estado);
+        nota.setText(n);
 
 
 
@@ -95,6 +88,9 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 anuncios.setCidade(cidade.getText().toString());
                 anuncios.setEstado(sigla.getText().toString());
                 anuncios.setNota(Integer.valueOf(nota.getText().toString()));
+                if(id == ""){
+                    txtID.setVisibility(View.INVISIBLE);
+                }
                 addAnuncio(anuncios);
 
                 Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
@@ -121,6 +117,24 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             }
         });
     }
+
+//    public void update(Anuncios anuncios, int id){
+//
+//        Call<Anuncios> call = anuncioService.addAnuncio(anuncios, String.valueOf(id));
+//        call.enqueue(new Callback<Anuncios>() {
+//            @Override
+//            public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
+//                if(response!= null){
+//                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Anuncios> call, Throwable t) {
+//                Log.e("Error", t.getMessage());
+//            }
+//        });
+//    }
 
 
 }
