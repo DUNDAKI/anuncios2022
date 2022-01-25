@@ -61,8 +61,6 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         String estado = bundle.getString("estado");
         String n = bundle.getString("nota");
 
-
-
         txtID.setText(id);
         nomeEmpresa.setText(nome);
         nomeProduto.setText(prod);
@@ -73,8 +71,14 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         sigla.setText(estado);
         nota.setText(n);
 
-
-
+        Log.e("id", id);
+        if(id.equals("")){
+            cadastrar.setText("SALVAR");
+            Log.i("id","botao salvar");
+        }else{
+            cadastrar.setText("MODIFICAR");
+            Log.i("id","botao modificar");
+        }
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,9 +92,8 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 anuncios.setCidade(cidade.getText().toString());
                 anuncios.setEstado(sigla.getText().toString());
                 anuncios.setNota(Integer.valueOf(nota.getText().toString()));
-                if(id == ""){
-                    txtID.setVisibility(View.INVISIBLE);
-                }
+
+
                 addAnuncio(anuncios);
 
                 Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);

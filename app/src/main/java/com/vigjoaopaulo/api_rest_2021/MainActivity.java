@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
     public void cadastrar(View view) {
         Intent intent = new Intent(MainActivity.this, CadastroAnuncioActivity.class);
         intent.putExtra("id","");
-        intent.putExtra("nomeEmpresa","");
-        intent.putExtra("nomeProduto","");
-        intent.putExtra("preco","");
-        intent.putExtra("endereco","");
-        intent.putExtra("numero","");
-        intent.putExtra("cidade","");
-        intent.putExtra("estado","");
-        intent.putExtra("nota","");
+        intent.putExtra("nomeEmpresa","Alcool Sao Paulo");
+        intent.putExtra("nomeProduto","AlcooL");
+        intent.putExtra("preco","5.222");
+        intent.putExtra("endereco","Ivo de genova");
+        intent.putExtra("numero","111");
+        intent.putExtra("cidade","IBATE");
+        intent.putExtra("estado","SP");
+        intent.putExtra("nota","2");
         startActivity(intent);
     }
 }
