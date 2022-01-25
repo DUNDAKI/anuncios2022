@@ -37,17 +37,18 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         setTitle("Dashboard Empresarial");
 
 
-        TextView txtID = (TextView) findViewById(R.id.txtId);
-        TextView nomeEmpresa = (TextView) findViewById(R.id.txtNomeEmpresa);
-        TextView nomeProduto = (TextView) findViewById(R.id.txtNomeprod);
-        TextView preco = (TextView) findViewById(R.id.txtPreco);
-        TextView endereco = (TextView) findViewById(R.id.txtEndereco);
-        TextView numero = (TextView) findViewById(R.id.txtNumero);
-        TextView cidade = (TextView) findViewById(R.id.txtCidade);
-        TextView sigla = (TextView) findViewById(R.id.txtEstado);
-        TextView nota = (TextView) findViewById(R.id.txtNota);
-        Button cadastrar = (Button) findViewById(R.id.btnCadastrar);
-        Button delete = (Button) findViewById(R.id.btnDelete);
+        TextView txtID = (TextView) findViewById(R.id.txtCadID);
+        TextView nomeEmpresa = (TextView) findViewById(R.id.txtCadEmpresa);
+        TextView nomeProduto = (TextView) findViewById(R.id.txtCadProd);
+        TextView preco = (TextView) findViewById(R.id.txtCadPreco);
+        TextView endereco = (TextView) findViewById(R.id.txtCadEnd);
+        TextView numero = (TextView) findViewById(R.id.txtCadNum);
+        TextView cidade = (TextView) findViewById(R.id.txtCadCidade);
+        TextView sigla = (TextView) findViewById(R.id.txtCadEstado);
+        TextView nota = (TextView) findViewById(R.id.txtCadNota);
+
+        Button cadastrar = (Button) findViewById(R.id.btnCadCadastrar);
+        Button delete = (Button) findViewById(R.id.btnCadDelete);
 
         //popular a lista
         Bundle bundle = getIntent().getExtras();
@@ -74,6 +75,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         Log.e("id", id);
         if(id.equals("")){
             cadastrar.setText("SALVAR");
+
             Log.i("id","botao salvar");
         }else{
             cadastrar.setText("MODIFICAR");

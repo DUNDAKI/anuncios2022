@@ -9,25 +9,22 @@
 
 
     <TextView
-        android:id="@+id/txtId"
+
+        android:id="@+id/txtCadID"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
-        android:gravity="center"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:background="#000"
         android:enabled="false"
-        android:layout_margin="5dp"
-
-        android:text="1000000000"
-        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="1"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtNomeEmpresa"
+        android:id="@+id/txtCadEmpresa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -35,114 +32,105 @@
         android:hint="nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtId" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadID" />
 
     <EditText
-        android:id="@+id/txtNomeprod"
+        android:id="@+id/txtCadProd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:hint="nome do produto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeEmpresa" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadEmpresa" />
 
 
     <EditText
-        android:id="@+id/txtPreco"
+        android:id="@+id/txtCadPreco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:hint="4.979"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeprod"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeEmpresa" />
+        app:layout_constraintStart_toEndOf="@+id/txtCadProd"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadEmpresa" />
 
     <EditText
-        android:id="@+id/txtEndereco"
+        android:id="@+id/txtCadEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:hint="end"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeprod" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadProd" />
 
     <EditText
-        android:id="@+id/txtNumero"
+        android:id="@+id/txtCadNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:hint="n"
-        app:layout_constraintStart_toEndOf="@+id/txtEndereco"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeprod" />
+        app:layout_constraintStart_toEndOf="@+id/txtCadEnd"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadProd" />
 
     <EditText
-        android:id="@+id/txtCidade"
+        android:id="@+id/txtCadCidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:hint="city"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEndereco" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadEnd" />
 
     <EditText
-        android:id="@+id/txtEstado"
+        android:id="@+id/txtCadEstado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:hint="est"
-        app:layout_constraintStart_toEndOf="@+id/txtCidade"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
+        app:layout_constraintStart_toEndOf="@+id/txtCadCidade"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadNum" />
 
 
     <EditText
-        android:id="@+id/txtNota"
+        android:id="@+id/txtCadNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:hint="nota"
-        app:layout_constraintStart_toEndOf="@+id/txtEstado"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
+        app:layout_constraintStart_toEndOf="@+id/txtCadEstado"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadNum" />
 
     <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnCadCadastrar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:text="ALTERAR"
+        android:text=""
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCidade" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadCidade" />
+
 
     <Button
-        android:id="@+id/btnEditar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="Editar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" />
-
-    <Button
-        android:id="@+id/btnDelete"
+        android:id="@+id/btnCadDelete"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:text="Deletar"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCadCadastrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
