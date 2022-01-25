@@ -92,6 +92,7 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
                 intent.putExtra("numero", String.valueOf(anuncios.get(position).getNumero()));
                 intent.putExtra("cidade", String.valueOf(anuncios.get(position).getCidade()));
                 intent.putExtra("estado", String.valueOf(anuncios.get(position).getEstado()));
+                intent.putExtra("nota", String.valueOf(anuncios.get(position).getNota()));
 
                 context.startActivity(intent);
             }

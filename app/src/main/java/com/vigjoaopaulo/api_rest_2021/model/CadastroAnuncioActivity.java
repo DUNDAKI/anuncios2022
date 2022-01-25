@@ -93,12 +93,15 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 anuncios.setEstado(sigla.getText().toString());
                 anuncios.setNota(Integer.valueOf(nota.getText().toString()));
 
-
-                addAnuncio(anuncios);
-
-                Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
-                startActivity(intent);
-            }
+                if(id.equals("")){
+                    addAnuncio(anuncios);
+                    Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
+                    startActivity(intent);
+                }else{
+                    update(anuncios, Integer.parseInt(id));
+                    Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
+                    startActivity(intent);
+                }       }
         });
 
 
@@ -121,23 +124,23 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         });
     }
 
-//    public void update(Anuncios anuncios, int id){
-//
-//        Call<Anuncios> call = anuncioService.addAnuncio(anuncios, String.valueOf(id));
-//        call.enqueue(new Callback<Anuncios>() {
-//            @Override
-//            public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
-//                if(response!= null){
-//                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Anuncios> call, Throwable t) {
-//                Log.e("Error", t.getMessage());
-//            }
-//        });
-//    }
+    public void update(Anuncios anuncios, int id){
+
+        Call<Anuncios> call = anuncioService.update(anuncios, id);
+        call.enqueue(new Callback<Anuncios>() {
+            @Override
+            public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Anuncios> call, Throwable t) {
+                Log.e("Error", t.getMessage());
+            }
+        });
+    }
 
 
 }
