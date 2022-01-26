@@ -1,7 +1,9 @@
 package com.vigjoaopaulo.api_rest_2021.model;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -112,9 +114,32 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               deleteA(Integer.parseInt(id));
-                Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
-                startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(CadastroAnuncioActivity.this);
+                builder.setTitle("Registro não poderá ser recuperado...");
+                builder.setMessage("Excluir Registro");
+                builder.setIcon(R.drawable.ic_aviso);
+                builder.setCancelable(false);
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                   }
+                }).setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                deleteA(Integer.parseInt(id));
+                                Intent intent = new Intent(CadastroAnuncioActivity.this, MainActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+
+
+
+
+
 
             }
         });
@@ -166,7 +191,9 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(CadastroAnuncioActivity.this, "Deletado com sucesso", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(CadastroAnuncioActivity.this, "Deletado com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplication(), "Deletado com sucesso", Toast.LENGTH_SHORT).show();
+
                 }
             }
 

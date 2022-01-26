@@ -77,8 +77,8 @@ public class ListaAnuncioEmpresaActivity extends AppCompatActivity {
                         Log.e("Lista", String.valueOf(anuncios));
                         listView.setAdapter(new AnuncioAdapter(ListaAnuncioEmpresaActivity.this, R.layout.painel_controle_activity, anuncios));
                     }
-                    Log.e("status ", status[0]);
-                    Toast.makeText(ListaAnuncioEmpresaActivity.this, status[0], Toast.LENGTH_SHORT).show();
+//                    Log.e("status ", status[0]);
+//                    Toast.makeText(ListaAnuncioEmpresaActivity.this, status[0], Toast.LENGTH_SHORT).show();
 
                 }else{
                     setContentView(R.layout.status);
