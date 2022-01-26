@@ -97,17 +97,31 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
 
                 if(id.equals("")){
                     addAnuncio(anuncios);
-                    Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
+                    cadastrar.setEnabled(false);
+                    Intent intent = new Intent(CadastroAnuncioActivity.this, MainActivity.class);
                     startActivity(intent);
                 }else{
                     update(anuncios, Integer.parseInt(id));
                     Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
                     startActivity(intent);
-                }       }
+                }
+            }
         });
 
 
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               deleteA(Integer.parseInt(id));
+                Intent intent = new Intent(CadastroAnuncioActivity.this, ListaAnuncioEmpresaActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
+
+
     public void addAnuncio(Anuncios anuncios){
 
         Call<Anuncios> call = anuncioService.addAnuncio(anuncios);
@@ -134,6 +148,25 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Anuncios> call, Throwable t) {
+                Log.e("Error", t.getMessage());
+            }
+        });
+    }
+
+
+    public void deleteA(int id){
+
+        Call<Anuncios> call = anuncioService.delete(id );
+        call.enqueue(new Callback<Anuncios>() {
+            @Override
+            public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(CadastroAnuncioActivity.this, "Deletado com sucesso", Toast.LENGTH_SHORT).show();
                 }
             }
 
