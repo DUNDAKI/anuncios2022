@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,6 +77,29 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         sigla.setText(estado);
         nota.setText(n);
 
+        //INICIO SPINNER
+        String[] comb = {"Alcool", "Gasolina", "Diesel", "GNV"};
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                nomeProduto.setText(spinner.getSelectedItem().toString());
+                
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, comb);
+        spinner.setAdapter(spinnerAdapter);
+
+
+
+
+        //FINAL SPINNER
         Log.e("id", id);
         if(id.equals("")){
             cadastrar.setText("SALVAR");
