@@ -3,7 +3,6 @@ package com.vigjoaopaulo.api_rest_2021.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,18 +13,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
-import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
-import com.vigjoaopaulo.api_rest_2021.model.CadastroAnuncioActivity;
+import com.vigjoaopaulo.api_rest_2021.activitys.CadastroAnuncioActivity;
 import com.vigjoaopaulo.api_rest_2021.R;
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
 
@@ -61,6 +53,8 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
 
 
         btnAvalia.setVisibility(View.INVISIBLE);
+
+
 
         id.setText( String.format("N° da publicação: %s " , anuncios.get(position).getId()));
         nomeEmpresa.setText(String.format("Nome da empresa: %s ", anuncios.get(position).getNomeEmpresa()));

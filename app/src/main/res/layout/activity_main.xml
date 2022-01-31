@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="15dp">
 
    <ListView
        android:id="@+id/listTeste"
@@ -14,41 +15,42 @@
 
    <Button
        android:id="@+id/btnListarPersona"
-       android:layout_width="wrap_content"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_marginStart="76dp"
-       android:layout_marginTop="128dp"
-       android:layout_marginEnd="9dp"
        android:text="avaliação"
        android:onClick="listaProdutos"
        app:layout_constraintEnd_toStartOf="@+id/btnProd"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
 
+
    <Button
        android:id="@+id/btnProd"
-       android:layout_width="wrap_content"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_marginStart="33dp"
-       android:layout_marginTop="128dp"
-       android:layout_marginEnd="76dp"
+       android:layout_marginTop="10dp"
        android:onClick="produto"
-       android:text="Lista Prod"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toEndOf="@+id/btnListarPersona"
-       app:layout_constraintTop_toTopOf="parent" />
-
+       app:layout_constraintTop_toBottomOf="@+id/btnListarPersona"
+       tools:layout_editor_absoluteX="152dp" />
 
    <Button
+       android:layout_marginTop="10dp"
        android:id="@+id/btnCadastrar"
-       android:layout_width="wrap_content"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_marginStart="140dp"
-       android:layout_marginTop="32dp"
-       android:layout_marginEnd="146dp"
        android:onClick="cadastrar"
        android:text="Cadastrar"
        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="1.0"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/btnProd" />
+
+   <Button
+       android:layout_marginTop="10dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Tela Login"
+       app:layout_constraintTop_toBottomOf="@+id/btnCadastrar"
+       tools:layout_editor_absoluteX="16dp"
+       android:onClick="telaLogin"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

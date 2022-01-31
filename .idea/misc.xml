@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/drawable/activity_form_login.xml" value="0.215625" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/drawable/background.xml" value="0.215625" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/drawable/conteiner_componentes.xml" value="0.215625" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/drawable/roundedbutton.xml" value="0.215625" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_avaliacao.xml" value="0.11277173913043478" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_cadastro.xml" value="0.20108695652173914" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_form_login.xml" value="0.25" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_tela_cadastro_usuario.xml" value="0.1" />
+        <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_tela_login.xml" value="0.22" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/activity_teste.xml" value="0.19010416666666666" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/cadastro_layout.xml" value="0.19947916666666668" />
         <entry key="..\:/PROJETO DEV/PROEJTO_ANDROID_STUDIO/API_Rest_2021/app/src/main/res/layout/content_man.xml" value="0.25" />

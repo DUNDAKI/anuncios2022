@@ -1,4 +1,4 @@
-package com.vigjoaopaulo.api_rest_2021.model;
+package com.vigjoaopaulo.api_rest_2021.activitys;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +18,9 @@ import android.widget.Toast;
 
 import com.vigjoaopaulo.api_rest_2021.MainActivity;
 import com.vigjoaopaulo.api_rest_2021.R;
-import com.vigjoaopaulo.api_rest_2021.activitys.ListaAnuncioEmpresaActivity;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
 import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
+import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
 import java.util.List;
 
@@ -69,7 +69,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
 
         txtID.setText(id);
         nomeEmpresa.setText(nome);
-        nomeProduto.setText(prod);
+        //nomeProduto.setText(prod);
         preco.setText(valor);
         endereco.setText(end);
         numero.setText(num);
@@ -78,13 +78,26 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         nota.setText(n);
 
         //INICIO SPINNER
-        String[] comb = {"Alcool", "Gasolina", "Diesel", "GNV"};
+        String[] comb2 = {"Alcool", "Gasolina", "Diesel", "GNV"};
+        String[] comb = {"Alcool1", "Gasolina2", "Diesel3", "GNV4"};
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, comb);
+        spinner.setAdapter(adapter);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                nomeProduto.setText(spinner.getSelectedItem().toString());
-                
+//                nomeProduto.setText(spinner.getSelectedItem().toString());
+                String item =  spinner.getSelectedItem().toString();
+                spinner.setSelection(Integer.parseInt(item));
+                int position = adapter.getPosition(prod);
+
+                if(!prod.equals(null)){
+                    spinner.setSelection(position);
+                    position =0;
+                    Log.e("p", item);
+                }
+
             }
 
             @Override
@@ -92,17 +105,14 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
 
             }
         });
-
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, comb);
-        spinner.setAdapter(spinnerAdapter);
-
-
-
-
         //FINAL SPINNER
+
+
+
         Log.e("id", id);
         if(id.equals("")){
             cadastrar.setText("SALVAR");
+            delete.setVisibility(View.INVISIBLE);
 
             Log.i("id","botao salvar");
         }else{

@@ -7,8 +7,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnectionAPI {
-    Apis api = new Apis();
 
+    Apis api = new Apis();
     public AnuncioService CreateAnuncioRetrofit(){
         Retrofit retrofit = new Retrofit
                 .Builder()

@@ -12,16 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.API_Rest_2021">
         <activity
+            android:name=".activitys.FormLogin"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".rating_bar.Avaliacao"
             android:exported="false" />
         <activity
-            android:name=".model.CadastroAnuncioActivity"
+            android:name=".activitys.CadastroAnuncioActivity"
             android:exported="false" />
         <activity
             android:name=".activitys.ListaAnuncioEmpresaActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activitys.TelaLogin"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

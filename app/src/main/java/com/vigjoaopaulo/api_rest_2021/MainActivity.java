@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.vigjoaopaulo.api_rest_2021.activitys.ListaAnuncioEmpresaActivity;
-import com.vigjoaopaulo.api_rest_2021.model.CadastroAnuncioActivity;
+import com.vigjoaopaulo.api_rest_2021.activitys.CadastroAnuncioActivity;
+import com.vigjoaopaulo.api_rest_2021.activitys.TelaLogin;
 import com.vigjoaopaulo.api_rest_2021.rating_bar.Avaliacao;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,10 +35,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void business(View view) {
-
-    }
-
     public void cadastrar(View view) {
         Intent intent = new Intent(MainActivity.this, CadastroAnuncioActivity.class);
         intent.putExtra("id","");
@@ -49,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("cidade","IBATE");
         intent.putExtra("estado","SP");
         intent.putExtra("nota","2");
+        startActivity(intent);
+    }
+
+    public void telaLogin(View view) {
+        Intent intent = new Intent(MainActivity.this, TelaLogin.class);
         startActivity(intent);
     }
 }
