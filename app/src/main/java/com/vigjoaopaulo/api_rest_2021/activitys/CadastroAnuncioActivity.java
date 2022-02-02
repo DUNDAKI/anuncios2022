@@ -94,16 +94,15 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 //SETA VALOR NO BANCO
                 TextView tv = (TextView) view;
                 selecionado = spinner.getSelectedItem().toString();
-
                 if(position == 0){
                     tv.setTextColor(Color.GRAY);
                     tv.setText("Escolha um item");
                     tv.setEnabled(false);
-
-
                 }else{
                     tv.setTextColor(Color.BLUE);
                 }
+                
+
             }
 
             @Override
@@ -126,8 +125,8 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             Log.i("id","botao modificar");
         }
 
-        
 
+        Log.e("prod" , prod);
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,26 +140,32 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 anuncios.setEstado(sigla.getText().toString());
                 anuncios.setNota(Integer.valueOf(nota.getText().toString()));
 
-                Log.e("prod" , prod);
+                  Log.i("prod" , prod);
+
+
                 if(id.equals("")){
-                    
-                    if(prod.isEmpty()){
-                        addAnuncio(anuncios);
-                        cadastrar.setEnabled(false);
-                        Intent intent = new Intent(CadastroAnuncioActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }else{
-                        Toast.makeText(CadastroAnuncioActivity.this, "Selelcione um item", Toast.LENGTH_SHORT).show();
-                    }
-                        
+                    addAnuncio(anuncios);
+                    cadastrar.setEnabled(false);
+                    Intent intent = new Intent(CadastroAnuncioActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }else{
                     update(anuncios, Integer.parseInt(id));
-
                     Intent intent = new Intent(CadastroAnuncioActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
 
-            }
+                
+                
+                
+                
+
+                }
+
+
+
+
+
+
 
         });
 
@@ -170,7 +175,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(CadastroAnuncioActivity.this);
                 builder.setTitle("Registro não poderá ser recuperado...");
-                builder.setMessage("Excluir Registro");
+                builder.setMessage("Excluir publicação n°: " + id);
                 builder.setIcon(R.drawable.ic_aviso);
                 builder.setCancelable(false);
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -181,6 +186,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 deleteA(Integer.parseInt(id));
+                                Toast.makeText(CadastroAnuncioActivity.this, "Registro apagado", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(CadastroAnuncioActivity.this, MainActivity.class);
                                 startActivity(intent);
                             }
@@ -200,13 +206,13 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
 
 
-                if(response.isSuccessful()){
+               if(response.isSuccessful()){
                     Toast.makeText(CadastroAnuncioActivity.this, "Servido off-line", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+
                 }
 
-                if(response!= null){
-                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
-                }
             }
 
             @Override
@@ -233,7 +239,6 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             }
         });
     }
-
 
     public void deleteA(int id){
 
