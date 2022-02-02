@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,13 +50,11 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         TextView status = (TextView) rowView.findViewById(R.id.txtStatus);
         Button btnAvalia = (Button) rowView.findViewById(R.id.btnSubmit);
         RatingBar  ratingBar = (RatingBar) rowView.findViewById(R.id.ratingBar);
+
         ratingBar.setIsIndicator(true);
 
 
         btnAvalia.setVisibility(View.INVISIBLE);
-
-
-
         id.setText( String.format("N° da publicação: %s " , anuncios.get(position).getId()));
         nomeEmpresa.setText(String.format("Nome da empresa: %s ", anuncios.get(position).getNomeEmpresa()));
         nomeProduto.setText(String.format("Produto: %s ", anuncios.get(position).getNomeProduto()));

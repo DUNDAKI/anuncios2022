@@ -28,21 +28,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:hint="nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCadID" />
-
-    <EditText
-        android:id="@+id/txtCadProd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:hint="nome do produto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCadEmpresa" />
 
 
     <EditText
@@ -52,7 +43,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:hint="4.979"
-        app:layout_constraintStart_toEndOf="@+id/txtCadProd"
+        app:layout_constraintStart_toEndOf="@+id/spinner"
         app:layout_constraintTop_toBottomOf="@+id/txtCadEmpresa" />
 
     <EditText
@@ -63,7 +54,7 @@
         android:layout_marginTop="10dp"
         android:hint="end"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCadProd" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
         android:id="@+id/txtCadNum"
@@ -73,7 +64,7 @@
         android:layout_marginTop="10dp"
         android:hint="n"
         app:layout_constraintStart_toEndOf="@+id/txtCadEnd"
-        app:layout_constraintTop_toBottomOf="@+id/txtCadProd" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
         android:id="@+id/txtCadCidade"
@@ -85,35 +76,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCadEnd" />
 
+
     <EditText
         android:id="@+id/txtCadEstado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="10dp"
         android:hint="est"
         app:layout_constraintStart_toEndOf="@+id/txtCadCidade"
-        app:layout_constraintTop_toBottomOf="@+id/txtCadNum" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txtCadEnd" />
 
     <EditText
         android:id="@+id/txtCadNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:hint="nota"
         app:layout_constraintStart_toEndOf="@+id/txtCadEstado"
         app:layout_constraintTop_toBottomOf="@+id/txtCadNum" />
 
     <Spinner
+
+        android:textColor="#ff0000"
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCadCidade" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadEmpresa" />
 
     <Button
         android:id="@+id/btnCadCadastrar"
@@ -126,7 +119,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadCidade" />
 
 
     <Button

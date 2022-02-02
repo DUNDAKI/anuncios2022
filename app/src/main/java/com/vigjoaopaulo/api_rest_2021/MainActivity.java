@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, CadastroAnuncioActivity.class);
         intent.putExtra("id","");
         intent.putExtra("nomeEmpresa","Alcool Sao Paulo");
-        intent.putExtra("nomeProduto","AlcooL");
+        intent.putExtra("nomeProduto","");
         intent.putExtra("preco","5.222");
         intent.putExtra("endereco","Ivo de genova");
         intent.putExtra("numero","111");
