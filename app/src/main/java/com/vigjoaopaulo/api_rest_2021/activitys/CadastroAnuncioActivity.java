@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,9 +19,10 @@ import android.widget.Toast;
 import com.vigjoaopaulo.api_rest_2021.MainActivity;
 import com.vigjoaopaulo.api_rest_2021.R;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
-import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
+import com.vigjoaopaulo.api_rest_2021.Retrofit.ConnectionAPI;
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,10 +30,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CadastroAnuncioActivity extends AppCompatActivity {
-    private ListView listView;
-    private List<Anuncios> anuncios;
-    private String selecionado, posicao;
+    private List<Anuncios> a = new ArrayList<>();
+    private Anuncios l = new Anuncios();
+
+    private String selecionado;
     private String prod;
+    private Spinner spinner;
+    ArrayAdapter<String> adapter;
+
 
     ConnectionAPI connectionAPI =  new ConnectionAPI();
     AnuncioService anuncioService = connectionAPI.CreateAnuncioRetrofit();
@@ -77,16 +81,24 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         sigla.setText(estado);
         nota.setText(n);
 
+
         //INICIO SPINNER
-        String[] comb2 = {"Alcool", "Gasolina", "Diesel", "GNV"};
+
         String[] comb = {"", "Alcool","Alcool Aditivada", "Gasolina Aditivada", "Diesel Comum", "Diesel Aditivado", "GNV4", "TESTE 01"};
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, comb);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, comb);
         spinner.setAdapter(adapter);
 
-        Log.i("sp", "meu produto: " + prod);
-        //DEVOLVE SPINNER COM DADOS DO BANCO "prod"
-        spinner.setSelection(adapter.getPosition(prod));
+
+
+        //SETA VALOR DO BANCO NO SPINNER
+        int pos = adapter.getPosition(prod);
+        spinner.setSelection(pos);
+
+
+
+
+
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -94,6 +106,8 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 //SETA VALOR NO BANCO
                 TextView tv = (TextView) view;
                 selecionado = spinner.getSelectedItem().toString();
+
+
                 if(position == 0){
                     tv.setTextColor(Color.GRAY);
                     tv.setText("Escolha um item");
@@ -101,7 +115,6 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 }else{
                     tv.setTextColor(Color.BLUE);
                 }
-                
 
             }
 
@@ -140,7 +153,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 anuncios.setEstado(sigla.getText().toString());
                 anuncios.setNota(Integer.valueOf(nota.getText().toString()));
 
-                  Log.i("prod" , prod);
+
 
 
                 if(id.equals("")){
@@ -150,21 +163,11 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                     startActivity(intent);
                 }else{
                     update(anuncios, Integer.parseInt(id));
+
                     Intent intent = new Intent(CadastroAnuncioActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
-
-                
-                
-                
-                
-
-                }
-
-
-
-
-
+           }
 
 
         });
@@ -207,9 +210,9 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
 
 
                if(response.isSuccessful()){
-                    Toast.makeText(CadastroAnuncioActivity.this, "Servido off-line", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CadastroAnuncioActivity.this, "Registro salvo com sucesso", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CadastroAnuncioActivity.this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -229,7 +232,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Anuncios> call, Response<Anuncios> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(CadastroAnuncioActivity.this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CadastroAnuncioActivity.this, "Atualizado com sucesso", Toast.LENGTH_SHORT).show();
                 }
             }
 

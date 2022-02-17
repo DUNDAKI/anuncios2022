@@ -51,6 +51,10 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         Button btnAvalia = (Button) rowView.findViewById(R.id.btnSubmit);
         RatingBar  ratingBar = (RatingBar) rowView.findViewById(R.id.ratingBar);
 
+        Spinner spinner = (Spinner) rowView.findViewById(R.id.spinner);
+
+
+
         ratingBar.setIsIndicator(true);
 
 
@@ -65,6 +69,8 @@ public class AnuncioAdapter  extends ArrayAdapter<Anuncios> {
         estado.setText(String.format("Estado: %s ", anuncios.get(position).getEstado()));
         nota.setText(String.format("nota: %s ", anuncios.get(position).getNota()));
         ratingBar.setRating(Float.parseFloat(anuncios.get(position).getNota().toString()));
+
+
 
 
         if(id==null && id.equals("")){

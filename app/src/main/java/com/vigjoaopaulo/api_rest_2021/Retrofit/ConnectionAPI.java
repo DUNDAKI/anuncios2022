@@ -1,4 +1,4 @@
-package com.vigjoaopaulo.api_rest_2021.connectionAPI;
+package com.vigjoaopaulo.api_rest_2021.Retrofit;
 
 import com.vigjoaopaulo.api_rest_2021.apis.Apis;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;

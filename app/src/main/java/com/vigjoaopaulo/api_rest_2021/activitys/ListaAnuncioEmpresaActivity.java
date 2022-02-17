@@ -12,11 +12,10 @@ import com.vigjoaopaulo.api_rest_2021.R;
 import com.vigjoaopaulo.api_rest_2021.adapters.AnuncioAdapter;
 import com.vigjoaopaulo.api_rest_2021.adapters.Lista_Alcool;
 import com.vigjoaopaulo.api_rest_2021.clientAPI.AnuncioService;
-import com.vigjoaopaulo.api_rest_2021.connectionAPI.ConnectionAPI;
+import com.vigjoaopaulo.api_rest_2021.Retrofit.ConnectionAPI;
 import com.vigjoaopaulo.api_rest_2021.model.Anuncios;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
